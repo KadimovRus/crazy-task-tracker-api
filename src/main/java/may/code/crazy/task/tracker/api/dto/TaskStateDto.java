@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Builder
@@ -23,6 +24,12 @@ public class TaskStateDto {
     @NonNull
     Long ordinal;
 
+    @JsonProperty("left_task_state_id")
+    Long leftTaskStateId;
+
+    @JsonProperty("right_task_state_id")
+    Long rightTaskStateId;
+
     @NonNull
     @JsonProperty("created_at")
     Instant createdAt;
@@ -30,4 +37,7 @@ public class TaskStateDto {
     @NonNull
     @JsonProperty("created_at")
     Instant updatedAt;
+
+    @NonNull
+    List<TaskDto> tasks;
 }

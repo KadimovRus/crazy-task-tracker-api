@@ -25,14 +25,14 @@ public class TaskStateEntity {
 
     String name;
 
-    @OneToOne
-    TaskStateEntity leftTaskState;
-
     @NonNull
     Long ordinal;
 
     @OneToOne
     TaskStateEntity rightTaskState;
+
+    @OneToOne
+    TaskStateEntity leftTaskState;
 
     @Builder.Default
     Instant createdAt = Instant.now();
